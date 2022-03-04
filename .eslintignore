@@ -1,0 +1,21 @@
+# directories
+node_modules/
+dist/
+build/
+api-build/
+coverage/
+
+# config
+jest.*.ts
+*.config.js
+
+# secrets
+.env
+
+# logs
+*-error.log
+
+# misc
+.eslintcache
+.vscode
+
