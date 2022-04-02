@@ -1,20 +1,27 @@
-import { HttpResponses } from '../shared/constants/Http';
+/* eslint-disable no-console */
+import UsersService from '../services/Users';
 import ErrorHandler from '../shared/utils/ErrorHandler';
 
 import { Request, Response } from 'express';
 
 class UsersController {
-  static get = (req: Request, res: Response): void => {
+  static get = async (req: Request, res: Response) => {
     try {
-      res.status(200).json(HttpResponses.success);
+      const { ipAddress } = req.query
+      const result = await UsersService.get(ipAddress as string)
+
+      res.status(200).send({ success: true, result })
     } catch (err) {
       ErrorHandler.processError(err as Error, req, res);
     }
   };
 
-  static create = (req: Request, res: Response): void => {
+  static create = async (req: Request, res: Response)  => {
     try {
-      res.status(200).json(HttpResponses.success);
+      const { ipAddress } = req.body
+      const result = await UsersService.save(ipAddress as string)
+
+      res.status(200).send({ success: true, result })
     } catch (err) {
       ErrorHandler.processError(err as Error, req, res);
     }

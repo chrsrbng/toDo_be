@@ -1,3 +1,4 @@
+import ToDosValidation from './ToDos';
 import UsersValidations from './Users';
 
 import { IMethods } from '../interfaces/Auth';
@@ -8,6 +9,7 @@ import get from 'lodash/get';
 export const Validators = {
   v1: {
     users: UsersValidations,
+    todos: ToDosValidation
   },
 };
 

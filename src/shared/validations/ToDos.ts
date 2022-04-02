@@ -4,21 +4,22 @@ import { RequireAtLeastOne } from '../interfaces/Common';
 import Joi from 'joi';
 
 // Change to Joi JS
-const UsersValidations: RequireAtLeastOne<IValidator> = {
+const ToDosValidation: RequireAtLeastOne<IValidator> = {
   POST: {
     default: Joi.object({
       body: Joi.object({
-        ipAddress: Joi.string().required()
-      }).required(),
+        userId: Joi.number().required(),
+        description: Joi.string().required()
+      }).required()
     }),
   },
   GET: {
     default: Joi.object({
       query: Joi.object({
-        ipAddress: Joi.string().required(),
+        userId: Joi.number().required(),
       }).required(),
     }),
   },
 };
 
-export default UsersValidations;
+export default ToDosValidation;
