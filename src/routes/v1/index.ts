@@ -1,4 +1,4 @@
-import toDosRoute from './Todos';
+import toDosRoute from './ToDos';
 import usersRoute from './Users';
 
 import AuthMiddleware from '../../shared/middlewares/Auth';
