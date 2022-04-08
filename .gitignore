@@ -7,7 +7,7 @@ coverage/
 logs/
 
 # secrets
-.env
+*.env
 
 # logs
 *-error.log
