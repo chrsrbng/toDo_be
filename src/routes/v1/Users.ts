@@ -7,5 +7,6 @@ const usersRoute: Router = Router();
 
 usersRoute.get('/', AuthMiddleware.verifyRequest, UsersController.get);
 usersRoute.post('/', AuthMiddleware.verifyRequest, UsersController.create);
+usersRoute.get('/getIp', AuthMiddleware.verifyRequest, UsersController.getIp)
 
 export default usersRoute;

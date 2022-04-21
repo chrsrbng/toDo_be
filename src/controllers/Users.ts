@@ -26,6 +26,23 @@ class UsersController {
       ErrorHandler.processError(err as Error, req, res);
     }
   };
+
+  static getIp = (req: Request, res: Response)  => {
+    try {
+      // const result = await UsersService.getIpAddress()
+
+      console.log('re', req)
+
+      res.status(200).send({ 
+        success: true, 
+        result: {
+          ip: req.ip
+      } 
+    })
+    } catch (err) {
+      ErrorHandler.processError(err as Error, req, res);
+    }
+  };
 }
 
 export default UsersController;

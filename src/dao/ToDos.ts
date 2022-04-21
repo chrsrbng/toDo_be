@@ -18,6 +18,7 @@ class ToDosDao {
         getRepository(ToDos)
             .createQueryBuilder('todos')
             .where('todos.userId = :userId', { userId })
+            .orderBy('id')
             .getMany()
 
     deleteById = (id: number) =>
