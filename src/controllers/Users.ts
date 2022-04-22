@@ -32,7 +32,7 @@ class UsersController {
       res.status(200).send({ 
         success: true, 
         result: {
-          ip: req.socket.localAddress
+          ip: req.socket.remoteAddress
       } 
     })
     } catch (err) {
