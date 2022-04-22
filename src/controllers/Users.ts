@@ -29,14 +29,10 @@ class UsersController {
 
   static getIp = (req: Request, res: Response)  => {
     try {
-      // const result = await UsersService.getIpAddress()
-
-      console.log('re', req)
-
       res.status(200).send({ 
         success: true, 
         result: {
-          ip: req.ip
+          ip: req.socket.localAddress
       } 
     })
     } catch (err) {
