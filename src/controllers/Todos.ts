@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import ToDosService from '../services/ToDos'
 import ErrorHandler from '../shared/utils/ErrorHandler'
 

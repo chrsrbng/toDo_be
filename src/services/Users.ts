@@ -1,27 +1,9 @@
-/* eslint-disable @typescript-eslint/no-unsafe-return */
 import UsersDao from "../dao/Users"
 
 class UsersService {
-  static save = async (ipAddress: string) => {
-    const usersDao = new UsersDao()
-    const result = await usersDao.save(ipAddress)
+  static save = (ipAddress: string) => UsersDao.save(ipAddress)
 
-    return result
-  }
-
-  static get = async (ipAddress: string) => {
-    const usersDao = new UsersDao()
-    const result = await usersDao.getByIpAddress(ipAddress)
-
-    return result
-  }
-
-  static getIpAddress = async () => {
-    const usersDao = new UsersDao()
-    const result = await usersDao.getIpAddress()
-    
-    return result.data.IPv4
-  }
+  static get = (ipAddress: string) => UsersDao.getByIpAddress(ipAddress)
 }
 
 export default UsersService

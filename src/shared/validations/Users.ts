@@ -3,7 +3,6 @@ import { RequireAtLeastOne } from '../interfaces/Common';
 
 import Joi from 'joi';
 
-// Change to Joi JS
 const UsersValidations: RequireAtLeastOne<IValidator> = {
   POST: {
     default: Joi.object({

@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import ToDosDao from "../dao/ToDos"
 
 class ToDosService {
@@ -8,29 +7,13 @@ class ToDosService {
         this.toDosDao = new ToDosDao()
     }
 
-    public save = async ({ userId, description }: { userId: number, description: string }) => {
-        const result = await this.toDosDao.save({ userId, description })
+    save = ({ userId, description }: { userId: number, description: string }) => this.toDosDao.save({ userId, description })
 
-        return result
-    }
+    updateById = ({ id, description }: { id: number, description: string }) => this.toDosDao.updateById({ id, description })
 
-    public updateById = async ({ id, description }: { id: number, description: string }) => {
-        const result = await this.toDosDao.updateById({ id, description })
+    getAll = (userId: number) => this.toDosDao.getAll(userId)
 
-        return result
-    }
-
-    public getAll = async (userId: number) => {
-        const result = await this.toDosDao.getAll(userId)
-
-        return result
-    }
-
-    public deleteById = async (id: number) => {
-        const result = await this.toDosDao.deleteById(id)
-
-        return result
-    }
+    deleteById = (id: number) => this.toDosDao.deleteById(id)
 }
 
 export default ToDosService
